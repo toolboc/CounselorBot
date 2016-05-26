@@ -1,0 +1,15 @@
+{
+  "name": "counselorbot",
+  "version": "1.0.0",
+  "description": "Intelligent counselor for assisting individuals with resources and information related to a variety of personal health topics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DXHackers",
+  "license": "MIT",
+  "dependencies": {
+    "botbuilder": "^0.11.1",
+    "restify": "^4.1.0"
+  }
+}
