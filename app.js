@@ -31,6 +31,6 @@ helloBot.add('/profile',  [
 server.use(helloBot.verifyBotFramework({ appId: 'process.env.APP_ID', appSecret: 'process.env.APP_SECRET'  }));
 server.post('/api/messages', helloBot.listen());
 
-server.listen(8080, function () {
+server.listen(process.env.port || 3978, function () {
     console.log('%s listening to %s', server.name, server.url); 
 });
