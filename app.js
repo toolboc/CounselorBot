@@ -3,12 +3,12 @@ var builder = require('botbuilder');
 var prompts = require('./prompts');
 
 /** Use bot LUIS model for the root dialog. */
-var model = process.env.model || 'https://api.projectoxford.ai/luis/v1/application?id=be2b2b6e-1f4f-4195-be9f-7cd16e5d688d&subscription-key=ae1f72bf978948ada602710e92b1908c';
+var model = process.env.model || 'https://api.projectoxford.ai/luis/v1/application?id=e3327a4f-2e5c-4fde-afbf-ee8e3ea87ca3&subscription-key=ae1f72bf978948ada602710e92b1908c';
 var dialog = new builder.LuisDialog(model);
 var bot = new builder.BotConnectorBot();
 bot.add('/', dialog);
 
-//bot.listenStdin();
+bot.listen();
 
 /** Answer help related questions like "what can I say?" */
 dialog.on('Help', builder.DialogAction.send(prompts.helpMessage));
@@ -27,6 +27,7 @@ dialog.on('Location', [askService, answerQuestion('location', prompts.answerLoca
 
 /** Answer website related questions like "how can I contact microsoft?" */
 dialog.on('Website', [askService, answerQuestion('website', prompts.answerWebsite)]);
+
 
 /** 
  * This function the first step in the waterfall for intent handlers. It will use the service mentioned
@@ -48,7 +49,7 @@ function askService(session, args, next) {
         // Just multi-turn over the existing service
         service = session.dialogData.ServiceName;
     }
-    
+   
     // Prompt the user to pick a service if they didn't specify a valid one.
     if (!service) {
         // Lets see if the user just asked for a service we don't know about.
@@ -85,21 +86,21 @@ function answerQuestion(field, answerTemplate) {
 
 
 /** 
- * Sample data sourced from http://crunchbase.com on 3/18/2016 
+ * Sample data 
  */
 var data = {
   'Planned Parenthood': {
       type: 'Family Care Centers',
       function: 'sex education',
-      description: 'Planned Parenthood Federation of America (PPFA), or Planned Parenthood, is a nonprofit organization that provides reproductive health services in the United States and internationally. A member association of the International Planned Parenthood Federation (IPPF), PPFA has its roots in Brooklyn, New York, where Margaret Sanger opened the first birth control clinic in the U.S. in 1916. In 1921, Sanger founded the American Birth Control League,[4] which changed its name to Planned Parenthood in 1942. Planned Parenthood is made up of 58 affiliates, which operate more than 650 health clinics in the United States, and it also partners with organizations in 12 countries globally.[2][3] The organization directly provides a variety of reproductive health services and sexual education, contributes to research in reproductive technology, and does advocacy work aimed at protecting and expanding reproductive rights',
+      description: 'Planned Parenthood Federation of America (PPFA), or Planned Parenthood, is a nonprofit organization that provides reproductive health services in the United States and internationally. A member association of the International Planned Parenthood Federation (IPPF), PPFA has its roots in Brooklyn, New York, where Margaret Sanger opened the first birth control clinic in the U.S. in 1916. In 1921, Sanger founded the American Birth Control League, which changed its name to Planned Parenthood in 1942. Planned Parenthood is made up of 58 affiliates, which operate more than 650 health clinics in the United States, and it also partners with organizations in 12 countries globally.  The organization directly provides a variety of reproductive health services and sexual education, contributes to research in reproductive technology, and does advocacy work aimed at protecting and expanding reproductive rights',
       location: '650+ clinic locations, see website for more information',
       website: 'https://www.plannedparenthood.org'
   },
     'Alcoholics Anonymous': {
       type: 'Substance Abuse Center',
       function: 'drug rehabilitation, substance abuse, and codepency support',
-      description: 'Alcoholics Anonymous (AA) is an international mutual aid fellowship[1] founded in 1935 by Bill Wilson and Dr. Bob Smith in Akron, Ohio. AAs stated "primary purpose" is to help alcoholics "stay sober and help other alcoholics achieve sobriety".[2][3][4] With other early members Bill Wilson and Bob Smith developed AAs Twelve Step program of spiritual and character development. AAs initial Twelve Traditions were introduced in 1946 to help the fellowship be stable and unified while disengaged from "outside issues" and influences. The Traditions recommend that members and groups remain anonymous in public media, altruistically helping other alcoholics and avoiding official affiliations with other organization. The Traditions also recommend that those representing AA avoid dogma and coercive hierarchies. Subsequent fellowships such as Narcotics Anonymous have adopted and adapted the Twelve Steps and the Twelve Traditions to their respective primary purposes',
-      location: 'Groups exist in most local jurisdictions, for local listings try an internet search engine like http://bing.com',
+      description: 'Alcoholics Anonymous (AA) is an international mutual aid fellowship founded in 1935 by Bill Wilson and Dr. Bob Smith in Akron, Ohio. AAs stated "primary purpose" is to help alcoholics "stay sober and help other alcoholics achieve sobriety".[2][3][4] With other early members Bill Wilson and Bob Smith developed AAs Twelve Step program of spiritual and character development. AAs initial Twelve Traditions were introduced in 1946 to help the fellowship be stable and unified while disengaged from "outside issues" and influences. The Traditions recommend that members and groups remain anonymous in public media, altruistically helping other alcoholics and avoiding official affiliations with other organization. The Traditions also recommend that those representing AA avoid dogma and coercive hierarchies. Subsequent fellowships such as Narcotics Anonymous have adopted and adapted the Twelve Steps and the Twelve Traditions to their respective primary purposes',
+      location: 'in most areas, for local listings try an internet search engine like http://bing.com',
       website: 'http://www.aa.org/'
   },
     'Narcotics Anonymous': {
@@ -121,14 +122,14 @@ var data = {
       function: 'Kinship,Foster Care and Adoption Support Groups, Private Domestic Foster Care and Adoption Agencies, Private Intercountry Adoption Agencies',
       description: 'Foster families allow PLC to provide the support and structure that a child needs at this time in a more loving and nurturing environment than an institution.',
       location: '1933 Montana Ave., NE, Washington, District of Columbia 20002',
-      website: 'http://lssnca.org/'
+      website: 'http://www.nccf-cares.org/'
   },
    'Lutheran Social Services of the National Capital Area': {
       type: 'Local Child & Family Services',
       function: 'Private Domestic Foster Care and Adoption Agencies, Private Intercountry Adoption Agencies',
       description: 'Lutheran Social Services of the National Capital Area (LSS/NCA) has devoted nearly a century to walking with those in need throughout the Washington D.C. Metro Area.',
       location: '4406 Georgia Avenue NW, Washington, District of Columbia 20011-7124',
-      website: 'http://www.nccf-cares.org/'
+      website: 'http://lssnca.org/'
   }
 
 };
