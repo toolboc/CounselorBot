@@ -100,7 +100,7 @@ var data = {
       type: 'Substance Abuse Center',
       function: 'drug rehabilitation, substance abuse, and codepency support',
       description: 'Alcoholics Anonymous (AA) is an international mutual aid fellowship founded in 1935 by Bill Wilson and Dr. Bob Smith in Akron, Ohio. AAs stated "primary purpose" is to help alcoholics "stay sober and help other alcoholics achieve sobriety".[2][3][4] With other early members Bill Wilson and Bob Smith developed AAs Twelve Step program of spiritual and character development. AAs initial Twelve Traditions were introduced in 1946 to help the fellowship be stable and unified while disengaged from "outside issues" and influences. The Traditions recommend that members and groups remain anonymous in public media, altruistically helping other alcoholics and avoiding official affiliations with other organization. The Traditions also recommend that those representing AA avoid dogma and coercive hierarchies. Subsequent fellowships such as Narcotics Anonymous have adopted and adapted the Twelve Steps and the Twelve Traditions to their respective primary purposes',
-      location: 'in most areas, for local listings try an internet search engine like http://bing.com',
+      location: 'Locations can be found in almost every city.  For local listings try an internet search engine like http://bing.com',
       website: 'http://www.aa.org/'
   },
     'Narcotics Anonymous': {
