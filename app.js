@@ -3,8 +3,9 @@ var builder = require('botbuilder');
 var prompts = require('./prompts');
 
 /** Use bot LUIS model for the root dialog. */
+var model = process.env.model;
 var dialog = new builder.LuisDialog(model);
-var bot = new builder.BotConnectorBot();
+var bot = new builder.BotConnectorBot({ appId: process.env.appId, appSecret: process.env.appSecret });
 bot.add('/', dialog);
 
 bot.listen();
