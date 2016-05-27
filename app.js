@@ -3,7 +3,6 @@ var builder = require('botbuilder');
 var prompts = require('./prompts');
 
 /** Use bot LUIS model for the root dialog. */
-var model = process.env.model || 'https://api.projectoxford.ai/luis/v1/application?id=e3327a4f-2e5c-4fde-afbf-ee8e3ea87ca3&subscription-key=ae1f72bf978948ada602710e92b1908c';
 var dialog = new builder.LuisDialog(model);
 var bot = new builder.BotConnectorBot();
 bot.add('/', dialog);
