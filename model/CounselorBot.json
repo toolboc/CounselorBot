@@ -1,0 +1,307 @@
+{
+  "luis_schema_version": "1.2.0",
+  "name": "CounselorBot",
+  "desc": "Intelligent counselor for assisting individuals with resources and information related to a variety of personal health topics",
+  "culture": "en-us",
+  "intents": [
+    {
+      "Name": "Location",
+      "Children": []
+    },
+    {
+      "Name": "Type",
+      "Children": []
+    },
+    {
+      "Name": "None",
+      "Children": []
+    },
+    {
+      "Name": "Description",
+      "Children": []
+    },
+    {
+      "Name": "Function",
+      "Children": []
+    },
+    {
+      "Name": "Help",
+      "Children": []
+    },
+    {
+      "Name": "Website",
+      "Children": []
+    }
+  ],
+  "entities": [
+    {
+      "Name": "ServiceName",
+      "Children": []
+    }
+  ],
+  "bing_entities": [],
+  "actions": [
+    {
+      "actionName": "Function",
+      "intentName": "Function",
+      "actionParameters": [
+        {
+          "parameterName": "Service",
+          "entityName": "ServiceName",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "what kind of services do you provide?",
+      "intent": "Type",
+      "entities": []
+    },
+    {
+      "text": "what does this service do?",
+      "intent": "Function",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what kind of things can i ask?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can i say?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "tell me about planned parenthood",
+      "intent": "Description",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "where are they located?",
+      "intent": "Location",
+      "entities": []
+    },
+    {
+      "text": "is their headquarters in washington?",
+      "intent": "Location",
+      "entities": []
+    },
+    {
+      "text": "how can i contact planned parenthood?",
+      "intent": "Website",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 4,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "where can i get more information?",
+      "intent": "Website",
+      "entities": []
+    },
+    {
+      "text": "how can i get to their office?",
+      "intent": "Location",
+      "entities": []
+    },
+    {
+      "text": "tell me more about planned parenthood",
+      "intent": "Description",
+      "entities": []
+    },
+    {
+      "text": "what kind of services does planned parenthood provide?",
+      "intent": "Function",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i am lost",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "does this thing work?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what is the url for planned parenthood?",
+      "intent": "Website",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 5,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "can you tell me how to find more information?",
+      "intent": "Website",
+      "entities": []
+    },
+    {
+      "text": "is it online?",
+      "intent": "Website",
+      "entities": []
+    },
+    {
+      "text": "random",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is alcoholics anonymous?",
+      "intent": "Location",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "where is narcotics anonymous?",
+      "intent": "Location",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i'd like a sandwhich",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where is planned parenthood?",
+      "intent": "Website",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "hi",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "where is planned parenthood",
+      "intent": "Location",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "help me!",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "how can i get to alcoholics anonymous?",
+      "intent": "Location",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "greetings",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what's up?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "describe planned parenthood",
+      "intent": "Description",
+      "entities": []
+    },
+    {
+      "text": "what does planned parenthood do",
+      "intent": "Function",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what services does alcoholics anonymous provide?",
+      "intent": "Function",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 3,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "where does narcotics anonymous meet?",
+      "intent": "Location",
+      "entities": [
+        {
+          "entity": "ServiceName",
+          "startPos": 2,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what is the deal with progressive life center",
+      "intent": "Description",
+      "entities": []
+    }
+  ]
+}
