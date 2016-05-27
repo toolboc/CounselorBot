@@ -124,7 +124,7 @@ var data = {
       location: '1933 Montana Ave., NE, Washington, District of Columbia 20002',
       website: 'http://www.nccf-cares.org/'
   },
-   'Lutheran Social Services of the National Capital Area': {
+   'Lutheran Social Services': {
       type: 'Local Child & Family Services',
       function: 'Private Domestic Foster Care and Adoption Agencies, Private Intercountry Adoption Agencies',
       description: 'Lutheran Social Services of the National Capital Area (LSS/NCA) has devoted nearly a century to walking with those in need throughout the Washington D.C. Metro Area.',

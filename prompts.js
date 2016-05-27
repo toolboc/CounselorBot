@@ -13,6 +13,6 @@ module.exports = {
     answerType: "%(service)s is a %(value)s.",
     answerFunction: " %(service)s can provide %(value)s.",
     answerDescription: "%(value)s",
-    answerLocation: "%(service)s is located at %(value)s .",
+    answerLocation: "%(value)s .",
     answerWebsite: "The website for %(service)s is %(value)s."
 };
